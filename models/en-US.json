@@ -1,31 +1,57 @@
 {
-  "interactionModel": {
-    "languageModel": {
-      "invocationName": "demo isp",
-      "intents": [
-        {
-          "name": "AMAZON.FallbackIntent",
-          "samples": []
-        },
-        {
-          "name": "AMAZON.CancelIntent",
-          "samples": []
-        },
-        {
-          "name": "AMAZON.HelpIntent",
-          "samples": []
-        },
-        {
-          "name": "AMAZON.StopIntent",
-          "samples": []
-        },
-        {
-          "name": "PlayGameIntent",
-          "samples": [
-            "start game"
-          ]
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "demo isp",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "PlayGameIntent",
+                    "slots": [],
+                    "samples": [
+                        "start game"
+                    ]
+                },
+                {
+                    "name": "BuySkillItemIntent",
+                    "slots": [
+                        {
+                            "name": "ProductName",
+                            "type": "LIST_OF_PRODUCT_NAMES"
+                        }
+                    ],
+                    "samples": [
+                        "buy {ProductName}",
+                        "buy"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "LIST_OF_PRODUCT_NAMES",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "unlock game pack"
+                            }
+                        }
+                    ]
+                }
+            ]
         }
-      ]
     }
-  }
 }
