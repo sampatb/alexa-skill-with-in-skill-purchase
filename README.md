@@ -1,10 +1,10 @@
-# An Simple Alexa Skill with In-Skill-Purchase
+# A Simple Alexa Skill with In-Skill-Purchase
 
 This project showcases an Alexa Skill with In-Skill-Purchase (**ISP**) capability. Follow the steps below to add an ISP to an existing Alexa skill.
 
 
 ## Prerequisites
-1. AWS account
+1. [AWS account](https://aws.amazon.com/)
 2. [ask-cli](https://developer.amazon.com/docs/smapi/quick-start-alexa-skills-kit-command-line-interface.html#step-2-install-and-initialize-ask-cli) installed
 3. A simple [hello-world skill](https://github.com/sampatb/alexa-skill-with-in-skill-purchase/commit/30681dfb1e0f2f5ae691644457798e7972e100af)
  
@@ -16,9 +16,9 @@ ask clone
 
 2. go inside skill root dir and create ISP: `$ ask add isp`
     
-    2.1 choose ISP type:= Entitlement
+    2.1 choose ISP type: `Entitlement`
 
-    2.2 give a name for ISP:= unlockgamepack
+    2.2 give a name for ISP: `unlockgamepack`
 
 3. Add details to the ISP: `$ vim ./isps/entitlement/unlockgamepack.json` 
 or open file in some editor
@@ -39,23 +39,23 @@ or open file in some editor
 
     2.1 click on Intent Add button
     
-    2.2 name: BuySkillItemIntent
+    2.2 name: `BuySkillItemIntent`
 
 3. Add slot for intent:
 
     3.1 click on Slot Type Add button
     
-    3.2 name: LIST_OF_PRODUCT_NAMES
+    3.2 name: `LIST_OF_PRODUCT_NAMES`
     
-    3.3 add sample values: unlock game pack
+    3.3 add sample values: `unlock game pack`
 
 4. Add slot to intent
 
     4.1: Go to BuySkillItemIntent and add a slot: ProductName
     
-    4.2: choose type as: LIST_OF_PRODUCT_NAMES
+    4.2: choose type as: `LIST_OF_PRODUCT_NAMES`
 
-5. add sample utterances: buy, buy {ProductName}, purchase {ProductName}
+5. add sample utterances: `buy, buy {ProductName}, purchase {ProductName}`
 6. Save and Build Model
 
 > [see code change](https://github.com/sampatb/alexa-skill-with-in-skill-purchase/commit/30d1352f46cfb292440369709a9ac65afd8dac45)
