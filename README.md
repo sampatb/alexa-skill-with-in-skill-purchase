@@ -1,32 +1,39 @@
-Prerequisites
-=============
-1. [ask-cli](https://developer.amazon.com/docs/smapi/quick-start-alexa-skills-kit-command-line-interface.html#step-2-install-and-initialize-ask-cli) installed
-2. A simple hello-world skill
+# An Simple Alexa Skill with In-Skill-Purchase
+
+This project showcases an Alexa Skill with In-Skill-Purchase (**ISP**) capability. Follow the steps below to add an ISP to an existing Alexa skill.
+
+
+## Prerequisites
+1. AWS account
+2. [ask-cli](https://developer.amazon.com/docs/smapi/quick-start-alexa-skills-kit-command-line-interface.html#step-2-install-and-initialize-ask-cli) installed
+3. A simple [hello-world skill](https://github.com/sampatb/alexa-skill-with-in-skill-purchase/commit/30681dfb1e0f2f5ae691644457798e7972e100af)
  
  
-Step-1: Create ISP and Associate ISP to a skill
-===============================================
+## Step-1: Create ISP and Associate ISP to a skill
+
 1. clone the skill to your local machine
 ask clone
 
-2. go inside skill root dir and create ISP: `ask add isp`
+2. go inside skill root dir and create ISP: `$ ask add isp`
     
     2.1 choose ISP type:= Entitlement
 
     2.2 give a name for ISP:= unlockgamepack
 
-3. Add details to the ISP: `vim ./isps/entitlement/unlockgamepack.json` 
+3. Add details to the ISP: `$ vim ./isps/entitlement/unlockgamepack.json` 
 or open file in some editor
 
-4. Check ISP status: `ask status --isp`
+4. Check ISP status: `$ ask status --isp`
 
-5. Deploy/Save the ISP: `ask deploy` (associates the ISP with skill)
+5. Deploy/Save the ISP: `$ ask deploy` (associates the ISP with skill)
 
-6. Make sure the ISP was associated with skill: `ask status --isp` (ensure: DEPLOY STATUS = Update)
+6. Make sure the ISP was associated with skill: `$ ask status --isp` (ensure: DEPLOY STATUS = Update)
+
+> [see code change](https://github.com/sampatb/alexa-skill-with-in-skill-purchase/commit/7f78519906079b54ce2163e9660e0f5e56de2578)
 
 
-Step-2: Create intents to handle one-shot ISP purchase
-======================================================
+## Step-2: Create intents to handle one-shot ISP purchase
+
 1. go to skill builder page in DevPortal
 2. Add Intent for handling ISP purchase: 
 
@@ -49,13 +56,13 @@ Step-2: Create intents to handle one-shot ISP purchase
     4.2: choose type as: LIST_OF_PRODUCT_NAMES
 
 5. add sample utterances: buy, buy {ProductName}, purchase {ProductName}
-9. Save and Build Model
+6. Save and Build Model
+
+> [see code change](https://github.com/sampatb/alexa-skill-with-in-skill-purchase/commit/30d1352f46cfb292440369709a9ac65afd8dac45)
 
 
+## Step-3: Use ISP in skill Lambda
 
-
-Step-3: Use ISP in skill Lambda
-===============================
 1. Add code to handle the buy intent:
 
 ```javascript
@@ -240,3 +247,4 @@ function onConnectionsResponse(event, callback) {
          buildSpeechletResponse(CARD_TITLE, speechOutput, repromptText, shouldEndSession));
 }
 ```
+> [see code change](https://github.com/sampatb/alexa-skill-with-in-skill-purchase/commit/49a888910b12b465cfb98d20bc943e55874fb838)
