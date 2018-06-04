@@ -1,0 +1,50 @@
+{
+  "version": "1.0",
+  "type": "ENTITLEMENT",
+  "referenceName": "unlockgamepack",
+  "publishingInformation": {
+    "locales": {
+      "en-US": {
+        "name": "Unlock Game Pack",
+        "smallIconUri": "https://m.media-amazon.com/images/G/01/alexa-blueprints/skill_housesitter_sm._CB1519699141_.png",
+        "largeIconUri": "https://images-na.ssl-images-amazon.com/images/I/7118YOMLm2L.png",
+        "summary": "Pack to unlock the game",
+        "description":  "Description about Unlock Game Pack",
+        "examplePhrases": [
+          "Alexa, buy game pack" 
+        ],
+        "keywords": [
+          "game", "pack", "unlock"
+        ],
+        "customProductPrompts": {
+          "purchasePromptDescription": "UnlockGamePack unlocks all levels of the Game",
+          "boughtCardDescription": "UnlockGamePack unlocks all levels of the Game"
+        }
+      }
+    },
+    "distributionCountries": [
+      "US"
+    ],
+    "pricing": {
+      "amazon.com": {
+        "releaseDate": "2018-06-01T00:00Z",
+        "defaultPriceListing": {
+          "price": 2,
+          "currency": "USD"
+        }
+      }
+    },
+    "taxInformation": {
+      "category": "SOFTWARE"
+    }
+  },
+  "privacyAndCompliance": {
+    "locales": {
+      "en-US": {
+        "privacyPolicyUrl":  "https://www.amazon.com/"
+      }
+    }
+  },
+  "testingInstructions": "Ask Alexa to buy or open UnlockGamePack",
+  "purchasableState": "PURCHASABLE"
+}
